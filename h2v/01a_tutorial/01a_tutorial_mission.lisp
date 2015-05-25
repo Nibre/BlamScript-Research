@@ -1570,7 +1570,7 @@
 	(sleep (sound_impulse_language_time sound\dialog\levels\01_spacestation\mission\l01_1000_jon))
 	
 	(print "His armor's working fine.") 											; Nibre - Can be either "His armor's working fine, Johnson.", or "His armor's working fine, Johnson, so shut your chili-hole." 
-	(unit_set_emotional_state (ai_get_unit guns) annoyed 0.5 1)		; I'm assuming this is a 1/2 sound permutation, but can only verify that it is random. Getting the shorter one is the 'Chili Hole Skip', as it speeds up the sleep on line #1575
+	(unit_set_emotional_state (ai_get_unit guns) annoyed 0.5 1)		; I'm assuming this is a 1/2 sound permutation, but can only verify that it /is/ random. Getting the shorter one is the 'Chili Hole Skip', as it speeds up the sleep 2 lines below
 	(sound_impulse_start sound\dialog\levels\01_spacestation\mission\l01_1010_gun (ai_get_object guns) 1)
 	(sleep (sound_impulse_language_time sound\dialog\levels\01_spacestation\mission\l01_1010_gun))
 	
