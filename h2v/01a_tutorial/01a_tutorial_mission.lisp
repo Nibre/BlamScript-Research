@@ -1,4 +1,4 @@
-﻿;	Nibre - This script has been reconstructed from the extracted compiled script, to match it as closely as possible to what the source script /should/ be like.  This includes formatting and 'un'-compiling (turning nested 'if's back into 'cond', removing redundancy etc.).
+;	Nibre - This script has been reconstructed from the extracted compiled script, to match it as closely as possible to what the source script /should/ be like.  This includes formatting and 'un'-compiling (turning nested 'if's back into 'cond', removing redundancy etc.).
 
 ;	01a_TUTORIAL Mission Script
 
@@ -857,25 +857,23 @@
 )
 
 (script startup icecream
-	(begin
-		(sleep_until
-			(and 
-				mark_ice_cream
-				(difficulty_legendary)
-			)
-			1
+	(sleep_until
+		(and 
+			mark_ice_cream
+			(difficulty_legendary)
 		)
-		(object_create cookiesncream)
-		(sleep_until
-			(or
-				(unit_has_weapon (unit (player0)) objects\weapons\multiplayer\ball\head_sp.weapon)
-				(unit_has_weapon (unit (player1)) objects\weapons\multiplayer\ball\head_sp.weapon)
-			)
-			1
-		)
-		(ice_cream_flavor_stock 14)
-		(print "Blam")
+		1
 	)
+	(object_create cookiesncream)
+	(sleep_until
+		(or
+			(unit_has_weapon (unit (player0)) objects\weapons\multiplayer\ball\head_sp.weapon)
+			(unit_has_weapon (unit (player1)) objects\weapons\multiplayer\ball\head_sp.weapon)
+		)
+		1
+	)
+	(ice_cream_flavor_stock 14)
+	(print "Blam")
 )
 
 (script static void test_mindread_up
@@ -1547,7 +1545,6 @@
 	
 	(print "If your shields go down, find some cover, wait for the meter to read fully-charged.")
 	(sound_impulse_start sound\dialog\levels\01_spacestation\mission\l01_0960_gun (ai_get_object guns) 1)
-	
 	(sleep 45)	
 	(sleep (sound_impulse_language_time sound\dialog\levels\01_spacestation\mission\l01_0960_gun))
 	
@@ -1572,8 +1569,8 @@
 	(cs_run_command_script johnson cs_lookat_player)
 	(sleep (sound_impulse_language_time sound\dialog\levels\01_spacestation\mission\l01_1000_jon))
 	
-	(print "His armor's working fine.")
-	(unit_set_emotional_state (ai_get_unit guns) annoyed 0.5 1)
+	(print "His armor's working fine.") 											; Nibre - Can be either "His armor's working fine, Johnson.", or "His armor's working fine, Johnson, so shut your chili-hole." 
+	(unit_set_emotional_state (ai_get_unit guns) annoyed 0.5 1)		; I'm assuming this is a 1/2 sound permutation, but can only verify that it is random. Getting the shorter one is the 'Chili Hole Skip', as it speeds up the sleep on line #1575
 	(sound_impulse_start sound\dialog\levels\01_spacestation\mission\l01_1010_gun (ai_get_object guns) 1)
 	(sleep (sound_impulse_language_time sound\dialog\levels\01_spacestation\mission\l01_1010_gun))
 	
