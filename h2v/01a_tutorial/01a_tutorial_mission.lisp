@@ -94,27 +94,18 @@
 )
 
 (script command_script cs_lookat_guns
-	(cs_face_object
-		true
-		(ai_get_object guns)
-	)
+	(cs_face_object true (ai_get_object guns))
 	(sleep_forever)
 )
 
 (script command_script cs_johnson_glanceat_guns
 	(cs_enable_looking true)
-	(cs_look_object
-		true
-		(ai_get_object guns)
-	)
+	(cs_look_object true (ai_get_object guns))
 	(sleep_forever)
 )
 
 (script command_script cs_lookat_johnson
-	(cs_face_object
-		true
-		(ai_get_object johnson)
-	)
+	(cs_face_object true (ai_get_object johnson))
 	(sleep_forever)
 )
 
@@ -221,10 +212,7 @@
 	(cs_enable_moving false)
 	(cs_enable_pathfinding_failsafe true)
 	(cs_go_to johnson_points/elevator)
-	(cs_face_object
-		true
-		(ai_get_object guns)
-	)
+	(cs_face_object true (ai_get_object guns))
 	(sleep_forever)
 )
 
@@ -309,9 +297,7 @@
 			(set counter_prompt_looker_start 0)
 		)
 	)
-	(set counter_prompt_looker_start
-		(+ counter_prompt_looker_start 1)
-	)
+	(set counter_prompt_looker_start (+ counter_prompt_looker_start 1))
 )
 
 (script static void prompt_looker
@@ -359,9 +345,7 @@
 			(set counter_prompt_looker 0)
 		)
 	)
-	(set counter_prompt_looker
-		(+ counter_prompt_looker 1)
-	)
+	(set counter_prompt_looker (+ counter_prompt_looker 1))
 )
 
 (script static void prompt_start_spot
@@ -400,9 +384,7 @@
 			(set counter_prompt_start_spot 0)
 		)
 	)
-	(set counter_prompt_start_spot
-		(+ counter_prompt_start_spot 1)
-	)
+	(set counter_prompt_start_spot (+ counter_prompt_start_spot 1))
 )
 
 (script static void prompt_careful
@@ -632,7 +614,7 @@
 			)
 		)
 		(
-			(= counter_prompt_zapper_getin 5) ; Nibre - This is correct, this and the below choice are never ran. Bug!! Once it hits the above (5), it goes back to 3, 4, 5 again repeatedly.
+			(= counter_prompt_zapper_getin 5) 
 			(begin
 				(cs_run_command_script guns cs_guns_zapper_prompt)
 				(unit_set_emotional_state (ai_get_unit guns) annoyed 0.5 1)
@@ -694,15 +676,15 @@
 			(
 				(= counter_prompt_zapper_button 2)
 				(begin
-						(custom_animation (ai_get_unit guns) objects\characters\marine\tutorial\tutorial l01_0910_jon true)
-						(objectives_finish_up_to 1)
-						(objectives_show_up_to 2)
-						(sleep 10)
-						(print "Go ahead and use the switch in front of you to start the shield test.")
-						(sound_impulse_start sound\dialog\levels\01_spacestation\mission\l01_3300_gun (ai_get_object guns) 1)
-						(set timer_prompt_zapper (sound_impulse_language_time sound\dialog\levels\01_spacestation\mission\l01_3300_gun))
-						(set timer_prompt_zapper_button (+ timer_prompt_zapper delay_prompt_short))
-					)
+					(custom_animation (ai_get_unit guns) objects\characters\marine\tutorial\tutorial l01_0910_jon true)
+					(objectives_finish_up_to 1)
+					(objectives_show_up_to 2)
+					(sleep 10)
+					(print "Go ahead and use the switch in front of you to start the shield test.")
+					(sound_impulse_start sound\dialog\levels\01_spacestation\mission\l01_3300_gun (ai_get_object guns) 1)
+					(set timer_prompt_zapper (sound_impulse_language_time sound\dialog\levels\01_spacestation\mission\l01_3300_gun))
+					(set timer_prompt_zapper_button (+ timer_prompt_zapper delay_prompt_short))
+				)
 			)
 			(
 				(= counter_prompt_zapper_button 3)
@@ -716,7 +698,7 @@
 			(
 				(= counter_prompt_zapper_button 4)
 				(begin
-					(print "Hit the switch, it won't hurt.much")
+					(print "Hit the switch, it won't hurt... much")
 					(sound_impulse_start sound\dialog\levels\01_spacestation\mission\l01_3340_gun (ai_get_object guns) 1)
 					(set timer_prompt_zapper (sound_impulse_language_time sound\dialog\levels\01_spacestation\mission\l01_3340_gun))
 					(set timer_prompt_zapper_button (+ timer_prompt_zapper delay_prompt_medium))
@@ -1272,7 +1254,7 @@
 	(sound_impulse_start sound\dialog\levels\01_spacestation\mission\l01_3020_gun (ai_get_object guns) 1)
 	(test_mindread_up)
 	(sleep (sound_impulse_language_time sound\dialog\levels\01_spacestation\mission\l01_3020_gun))
-	(print "That's it")
+	(print "That's it")
 	(sound_impulse_start sound\dialog\levels\01_spacestation\mission\l01_0760_gun (ai_get_object guns) 1)
 	(sleep (sound_impulse_language_time sound\dialog\levels\01_spacestation\mission\l01_0760_gun))
 	(print "Now the bottom one.")
@@ -1314,7 +1296,7 @@
 )
 
 (script static void training_move
-	(print "Stand-by. I'm going to offline the inhibitors")
+	(print "Stand-by. I'm going to offline the inhibitors")
 	(sound_impulse_start sound\dialog\levels\01_spacestation\mission\l01_0790_gun (ai_get_object guns) 1)
 	(sleep (sound_impulse_language_time sound\dialog\levels\01_spacestation\mission\l01_0790_gun))
 	
@@ -1367,7 +1349,7 @@
 	(sleep_until
 		(if
 			(< (objects_distance_to_flag (players) zapper_flag) 2.5)
-			(begin true)
+			true
 			(cond
 				(
 					(> timer_prompt_careful 0)
@@ -1417,81 +1399,79 @@
 	(cs_run_command_script guns cs_guns_zapper)
 	
 	(sleep_until
-		(begin
+		(if
+			(= (device_group_get zapper_control_group) 1)
+			(begin true)
 			(if
-				(= (device_group_get zapper_control_group) 1)
-				(begin true)
-				(if
-					(> (objects_distance_to_object (players) (ai_get_object guns)) 2.5)
-					(begin false)
-					(cond
-						(
-							(> timer_prompt_zapper 0)
-							(begin
-								(set timer_prompt_zapper (- timer_prompt_zapper 1))
-								false
-							)
+				(> (objects_distance_to_object (players) (ai_get_object guns)) 2.5)
+				(begin false)
+				(cond
+					(
+						(> timer_prompt_zapper 0)
+						(begin
+							(set timer_prompt_zapper (- timer_prompt_zapper 1))
+							false
 						)
-						(
-							(> timer_prompt_zapper_lookatme 0)
-							(begin
-								(set timer_prompt_zapper_lookatme (- timer_prompt_zapper_lookatme 1))
-								(set timer_prompt_zapper_getin (- timer_prompt_zapper_getin 1))
-								(set timer_prompt_zapper_button (- timer_prompt_zapper_button 1))
-								(if
-									(objects_can_see_object (player0) (ai_get_object guns) 40)
-									(begin
-										(sleep 15)
-										(set timer_prompt_zapper_lookatme 0)
-									)
+					)
+					(
+						(> timer_prompt_zapper_lookatme 0)
+						(begin
+							(set timer_prompt_zapper_lookatme (- timer_prompt_zapper_lookatme 1))
+							(set timer_prompt_zapper_getin (- timer_prompt_zapper_getin 1))
+							(set timer_prompt_zapper_button (- timer_prompt_zapper_button 1))
+							(if
+								(objects_can_see_object (player0) (ai_get_object guns) 40)
+								(begin
+									(sleep 15)
+									(set timer_prompt_zapper_lookatme 0)
 								)
-								false
 							)
+							false
 						)
-						(
-							(> timer_prompt_zapper_getin 0)
-							(begin
-								(set timer_prompt_zapper_lookatme (- timer_prompt_zapper_lookatme 1))
-								(set timer_prompt_zapper_getin (- timer_prompt_zapper_getin 1))
-								(set timer_prompt_zapper_button (- timer_prompt_zapper_button 1))
-								(if
-									(volume_test_objects tv_zapper (players))
-									(begin
-										(sleep 15)
-										(set timer_prompt_zapper_getin 0)
-									)
+					)
+					(
+						(> timer_prompt_zapper_getin 0)
+						(begin
+							(set timer_prompt_zapper_lookatme (- timer_prompt_zapper_lookatme 1))
+							(set timer_prompt_zapper_getin (- timer_prompt_zapper_getin 1))
+							(set timer_prompt_zapper_button (- timer_prompt_zapper_button 1))
+							(if
+								(volume_test_objects tv_zapper (players))
+								(begin
+									(sleep 15)
+									(set timer_prompt_zapper_getin 0)
 								)
-								false
 							)
+							false
 						)
-						(
-							(> timer_prompt_zapper_button 0)
-							(begin
-								(set timer_prompt_zapper_button (- timer_prompt_zapper_button 1))
-								(set timer_prompt_zapper_getin (- timer_prompt_zapper_getin 1))
-								(set timer_prompt_zapper_button (- timer_prompt_zapper_button 1))
-								(if
-									(= (device_group_get zapper_control_group) 1)
-									(begin
-										(sleep 15)
-										(set timer_prompt_zapper_button 0)
-									)
+					)
+					(
+						(> timer_prompt_zapper_button 0)
+						(begin
+							(set timer_prompt_zapper_button (- timer_prompt_zapper_button 1))
+							(set timer_prompt_zapper_getin (- timer_prompt_zapper_getin 1))
+							(set timer_prompt_zapper_button (- timer_prompt_zapper_button 1))
+							(if
+								(= (device_group_get zapper_control_group) 1)
+								(begin
+									(sleep 15)
+									(set timer_prompt_zapper_button 0)
 								)
-								false
 							)
+							false
 						)
-						(
-							(not (objects_can_see_object (player0) (ai_get_object guns) 40))
-							(prompt_zapper_lookatme)
-						)
-						(
-							(not (volume_test_objects tv_zapper (players)))
-							(prompt_zapper_getin)
-						)
-						(
-							true
-							(prompt_zapper_button)
-						)
+					)
+					(
+						(not (objects_can_see_object (player0) (ai_get_object guns) 40))
+						(prompt_zapper_lookatme)
+					)
+					(
+						(not (volume_test_objects tv_zapper (players)))
+						(prompt_zapper_getin)
+					)
+					(
+						true
+						(prompt_zapper_button)
 					)
 				)
 			)
@@ -1563,7 +1543,7 @@
 	)
 	(unit_set_emotional_state (ai_get_unit johnson) inquisitive 0.5 1)
 	
-	(print "You done with my boy here? I don't see any training-wheels")
+	(print "You done with my boy here? I don't see any training-wheels")
 	(sound_impulse_start sound\dialog\levels\01_spacestation\mission\l01_1000_jon (ai_get_object johnson) 1)
 	(sleep (- (sound_impulse_language_time sound\dialog\levels\01_spacestation\mission\l01_1000_jon) 90))
 	(cs_run_command_script johnson cs_lookat_player)
