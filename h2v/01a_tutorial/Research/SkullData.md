@@ -2,7 +2,7 @@
 ## Scripts
 ### icecream
 ```lisp
-# Lines 859-877 from 01a_tutorial_mission
+; Lines 859-877 from 01a_tutorial_mission
 (script startup icecream
 	(sleep_until
 		(and 
@@ -25,8 +25,8 @@
 ```
 ### prompt_elevator_plr
 ```lisp
-# Lines 767-847 from 01a_tutorial_mission
-# Called from training_done
+; Lines 767-847 from 01a_tutorial_mission
+; Called from training_done
 (script static void prompt_elevator_plr
 	(hud_show_training_text false)
 	(cond
