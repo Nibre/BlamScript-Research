@@ -110,7 +110,7 @@ However, there _are_ 3 good arguments you could take against this name;
 2. That 343 Industries named it _'That’s Just... Wrong'_ 
     * They might have been mistaken, following the same logic other people did, or perhaps there was a typo in the game code
 3. Bungie changed the name of _'Sputnik'_ into _'Cow Bell'_ in Halo 3
-    * They.. well, this one's harder to refute. _**But**_, the _'Cow Bell'_ name still makes zero sense for what the _'Sputnik'_ Skull does. _Maybe they were mistaken too?_ ¯\\_(ツ)\_/¯
+    * They.. well, this one's harder to refute. _**But**_, the _'Cow Bell'_ name still makes zero sense for what the _'Sputnik'_ Skull does. _Maybe they were mistaken too?_  ¯ \ _ (ツ) _ / ¯
 
 But reguardless;
 #### I believe that its true, original name is _'Cow Bell'_, on the basis that it just makes more sense
