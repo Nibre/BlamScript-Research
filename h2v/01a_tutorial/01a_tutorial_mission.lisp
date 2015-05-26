@@ -88,12 +88,12 @@
 ;=================================
 ;======== Command Scripts =========
 ;=================================
-(script command cs_lookat_player
+(script command_script cs_lookat_player
 	(cs_face_player true)
 	(sleep_forever)
 )
 
-(script command cs_lookat_guns
+(script command_script cs_lookat_guns
 	(cs_face_object
 		true
 		(ai_get_object guns)
@@ -101,7 +101,7 @@
 	(sleep_forever)
 )
 
-(script command cs_johnson_glanceat_guns
+(script command_script cs_johnson_glanceat_guns
 	(cs_enable_looking true)
 	(cs_look_object
 		true
@@ -110,7 +110,7 @@
 	(sleep_forever)
 )
 
-(script command cs_lookat_johnson
+(script command_script cs_lookat_johnson
 	(cs_face_object
 		true
 		(ai_get_object johnson)
@@ -118,14 +118,14 @@
 	(sleep_forever)
 )
 
-(script command cs_lookat_console_zapper
+(script command_script cs_lookat_console_zapper
 	(cs_look true guns_points/console_zapper)
 	(sleep 45)
 	(cs_face_player true)
 	(sleep_forever)
 )
 
-(script command cs_lookat_console_toplight
+(script command_script cs_lookat_console_toplight
 	(cs_aim_object true looker_light_top_red)
 	(sleep 45)
 	(cs_face true guns_points/console_inhibitor)
@@ -134,7 +134,7 @@
 	(sleep_forever)
 )
 
-(script command cs_lookat_console_bottomlight
+(script command_script cs_lookat_console_bottomlight
 	(cs_aim_object true looker_light_bottom_red)
 	(sleep 45)
 	(cs_face true guns_points/console_inhibitor)
@@ -143,14 +143,14 @@
 	(sleep_forever)
 )
 
-(script command cs_lookat_console_inhibitor
+(script command_script cs_lookat_console_inhibitor
 	(cs_face true guns_points/console_inhibitor)
 	(sleep 30)
 	(cs_face_player true)
 	(sleep_forever)
 )
 
-(script command cs_guns_start
+(script command_script cs_guns_start
 	(cs_force_combat_status 2)
 	(cs_enable_moving false)
 	(cs_enable_pathfinding_failsafe true)
@@ -159,7 +159,7 @@
 	(sleep_forever)
 )
 
-(script command cs_guns_zapper_halfway
+(script command_script cs_guns_zapper_halfway
 	(cs_force_combat_status 2)
 	(cs_enable_moving false)
 	(cs_enable_pathfinding_failsafe true)
@@ -168,7 +168,7 @@
 	(sleep_forever)
 )
 
-(script command cs_guns_zapper_wait
+(script command_script cs_guns_zapper_wait
 	(cs_force_combat_status 2)
 	(cs_enable_moving false)
 	(cs_enable_pathfinding_failsafe true)
@@ -177,7 +177,7 @@
 	(sleep_forever)
 )
 
-(script command cs_guns_zapper
+(script command_script cs_guns_zapper
 	(cs_force_combat_status 2)
 	(cs_enable_moving false)
 	(cs_enable_pathfinding_failsafe true)
@@ -186,7 +186,7 @@
 	(sleep_forever)
 )
 
-(script command cs_guns_zapper_prompt
+(script command_script cs_guns_zapper_prompt
 	(cs_force_combat_status 2)
 	(cs_enable_moving false)
 	(cs_enable_pathfinding_failsafe true)
@@ -198,7 +198,7 @@
 	(sleep_forever)
 )
 
-(script command cs_johnson_start
+(script command_script cs_johnson_start
 	(cs_force_combat_status 2)
 	(cs_enable_moving false)
 	(cs_enable_pathfinding_failsafe true)
@@ -207,7 +207,7 @@
 	(sleep_forever)
 )
 
-(script command cs_johnson_elevator
+(script command_script cs_johnson_elevator
 	(cs_force_combat_status 2)
 	(cs_enable_moving false)
 	(cs_enable_pathfinding_failsafe true)
@@ -216,7 +216,7 @@
 	(sleep_forever)
 )
 
-(script command cs_johnson_elevator_face_guns
+(script command_script cs_johnson_elevator_face_guns
 	(cs_force_combat_status 2)
 	(cs_enable_moving false)
 	(cs_enable_pathfinding_failsafe true)
@@ -228,7 +228,7 @@
 	(sleep_forever)
 )
 
-(script command cs_guns_elevator
+(script command_script cs_guns_elevator
 	(cs_force_combat_status 2)
 	(cs_enable_moving false)
 	(cs_enable_pathfinding_failsafe true)
@@ -237,7 +237,7 @@
 	(sleep_forever)
 )
 
-(script command cs_johnson_tram
+(script command_script cs_johnson_tram
 	(cs_force_combat_status 2)
 	(cs_enable_moving false)
 	(cs_enable_pathfinding_failsafe true)
@@ -246,7 +246,7 @@
 	(sleep_forever)
 )
 
-(script command cs_lookat_macgun
+(script command_script cs_lookat_macgun
 	(cs_force_combat_status 2)
 	(cs_enable_moving false)
 	(cs_enable_pathfinding_failsafe true)
@@ -256,23 +256,23 @@
 	(sleep_forever)
 )
 
-(script command cs_lookat_malta
+(script command_script cs_lookat_malta
 	(cs_face true johnson_points/malta)
 	(sleep_forever)
 )
 
-(script command cs_lookat_fleet
+(script command_script cs_lookat_fleet
 	(cs_face_object true inamberclad)
 	(cs_look_object true inamberclad)
 	(sleep_forever)
 )
 
-(script command cs_johnson_lookat_station
+(script command_script cs_johnson_lookat_station
 	(cs_face true johnson_points/station)
 	(sleep_forever)
 )
 
-(script command cs_johnson_station
+(script command_script cs_johnson_station
 	(cs_force_combat_status 2)
 	(cs_enable_moving false)
 	(cs_enable_pathfinding_failsafe true)
