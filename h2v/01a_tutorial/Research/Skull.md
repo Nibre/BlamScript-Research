@@ -37,7 +37,7 @@ While player is not inside of the Elevator volume
 In total, with about 7 seconds of dialog and 264 seconds of scripted waiting, it takes about 271 seconds, or 4 minutes, 31 seconds [Or, it's _supposed to_, see below. For H2V/MCC, it's instead about 139 seconds, or 2 minutes 19 seconds] from the second Johnson crosses the threshold into the Elevator, to when the Skull is spawned.
 
 
-### Found New Bug
+#### Found New Bug
 
 In testing this, I actually found a **new** (or, at least, unfixed) bug in H2V/MCC reguarding scripts; while the engine is set up to run at 60hz, and the 'sleep' commands are fixed to compensate from 30hz, the scripts _themselves_ run at 60hz. This would normally be fine, except for **this exact specific case**, where a timer is run manually _inside_ of the script. 
 
@@ -56,7 +56,7 @@ The other occurrence looked like it would be on the Tartarus Boss fight, but it 
 The best description I've ever found of what the Skull does is from Kornman00 (Halo Engine Reverse-Engineering Jesus) [**here**](http://forums.bungie.org/halo/archive35.pl?read=1049288), where he explains that it just sets all of the game engine sounds 'volume' to be **Loud**, so that even the quietest noise you generate, to the AI, is heard as loudly as an exploding grenade. _This_ is why they notice you more quickly.
 
 ## Skull Name
-Now, ever since this Skull was found, there has been confusion with what its name actually is, as it doesn't flash text when you pick it up like the other Skulls. Luckily in MCC, 343 have finally put a name on it, _'That's Just...Wrong'_, to put that confusion to rest. I am not convinced though, after looking at the evidence, that Bungie had **actually** intended its name to be _'That's Just...Wrong'_. That is why I 've been referring to is as just _'Skull'_.
+Now, ever since this Skull was found, there has been confusion with what its name actually is, as it doesn't flash text when you pick it up like the other Skulls do. Luckily in MCC, 343 have finally put a name on it, _'That's Just...Wrong'_, to put that confusion to rest. I am not convinced though, after looking at the evidence, that Bungie had **actually** intended its name to be _'That's Just...Wrong'_. That is why I've been referring to is as just _'Skull'_.
 
 
 
@@ -109,9 +109,9 @@ However, there _are_ 3 good arguments you could take against this name;
     * He might have been mistaken, following the same logic other people did, or perhaps there was a typo in the game code
 2. That 343 Industries named it _'That’s Just... Wrong'_ 
     * They might have been mistaken, following the same logic other people did, or perhaps there was a typo in the game code
-3. Bungie changed the name of _'Sputnik'_ into _'Cow Bell'_ in Halo 3
-    * They.. well, this one's harder to refute. _**But**_, the _'Cow Bell'_ name still makes zero sense for what the _'Sputnik'_ Skull does. _Maybe they were mistaken too?_  ¯ \ _ (ツ) _ / ¯
+3. Bungie changed the name of _'Sputnik'_ into _'Cow Bell'_ in Halo 3, and it's stuck since
+    * They.. well, this one's harder to refute. _**But**_, the _'Cow Bell'_ name still doesn't make a ton of sense for what the _'Sputnik'_ Skull does (Amplifying _explosions_? Doesn't seem very Cow-Bell-ey). _Maybe they were mistaken too?_  ¯ \ _ (ツ) _ / ¯
 
 But reguardless;
-#### I believe that its true, original name is _'Cow Bell'_, on the basis that it just makes more sense
-###### [Even though there's evidence both for, and against it]
+#### Even though its name is now _'That’s Just... Wrong'_, I believe that its true, original name was _'Cow Bell'_, on the basis that it just makes more sense
+###### [Though there's good evidence both for, and against it]
