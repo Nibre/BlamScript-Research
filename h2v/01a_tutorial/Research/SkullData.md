@@ -1,5 +1,6 @@
 # Armory Skull
 ## Scripts
+From [01a_tutorial_mission](../01a_tutorial_mission.lisp)
 ### icecream
 ```lisp
 ; Lines from 01a_tutorial_mission
