@@ -1,4 +1,6 @@
 # Armory Skull
+## Level Data
+Relevant Level Data [Here](SkullData.md)
 ## Spawning
 The Skull spawns when the following events occur;
 
@@ -54,7 +56,7 @@ The other occurrence looked like it would be on the Tartarus Boss fight, but it 
 The best description I've ever found of what the Skull does is from Kornman00 (Halo Engine Reverse-Engineering Jesus) [**here**](http://forums.bungie.org/halo/archive35.pl?read=1049288), where he explains that it just sets all of the game engine sounds 'volume' to be **Loud**, so that even the quietest noise you generate, to the AI, is heard as loudly as an exploding grenade. _This_ is why they notice you more quickly.
 
 ## Skull Name
-Now, ever since this Skull was found, there has been confusion with what its name actually is, as it doesn't flash text when you pick it up like the other Skulls. Luckily in MCC, 343 have finally put a name on it, _'That's Just...Wrong'_, to put that confusion to rest. I am not convinced though, after looking at the evidence, that Bungie had **actually** intended its name to be _'That's Just...Wrong'_. That is why I 've been referring to is as just 'Skull'.
+Now, ever since this Skull was found, there has been confusion with what its name actually is, as it doesn't flash text when you pick it up like the other Skulls. Luckily in MCC, 343 have finally put a name on it, _'That's Just...Wrong'_, to put that confusion to rest. I am not convinced though, after looking at the evidence, that Bungie had **actually** intended its name to be _'That's Just...Wrong'_. That is why I 've been referring to is as just _'Skull'_.
 
 
 
@@ -102,15 +104,14 @@ It makes perfect sense;
  * _'That’s Just... Wrong'_ name doesn't really make much sense for it
 
 However, there _are_ 3 good arguments you could take against this name;
+
 1. That [Kornman00 himself](http://forums.bungie.org/halo/archive35.pl?read=1049288) referred to it as _'That’s Just... Wrong'_ 
-   * He might have been mistaken, following the same logic other people did, or perhaps there was a typo in the game code
+    * He might have been mistaken, following the same logic other people did, or perhaps there was a typo in the game code
 2. That 343 Industries named it _'That’s Just... Wrong'_ 
-   * They might have been mistaken, following the same logic other people did, or perhaps there was a typo in the game code
+    * They might have been mistaken, following the same logic other people did, or perhaps there was a typo in the game code
 3. Bungie changed the name of _'Sputnik'_ into _'Cow Bell'_ in Halo 3
-   * They.. well, this one's harder to refute. _**But**_, the _'Cow Bell'_ name still makes zero sense for what the _'Sputnik'_ Skull does. _Maybe they were mistaken too?_ ¯\\_(ツ)\_/¯
+    * They.. well, this one's harder to refute. _**But**_, the _'Cow Bell'_ name still makes zero sense for what the _'Sputnik'_ Skull does. _Maybe they were mistaken too?_ ¯\\_(ツ)\_/¯
 
 But reguardless;
 #### I believe that its true, original name is _'Cow Bell'_, on the basis that it just makes more sense
 ###### [Even though there's evidence both for, and against it]
-## Level Data
-Relevant Level Data [Here](../blob/master/h2v/01a_tutorial/Research/SkullData.md)
