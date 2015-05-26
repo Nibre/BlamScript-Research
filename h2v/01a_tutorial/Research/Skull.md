@@ -39,7 +39,7 @@ In total, with about 7 seconds of dialog and 264 seconds of scripted waiting, it
 
 #### Found New Bug
 
-In testing this, I actually found a **new** (or, at least, unfixed) bug in H2V/MCC reguarding scripts; while the engine is set up to run at 60hz, and the 'sleep' commands are fixed to compensate from 30hz, the scripts _themselves_ run at 60hz. This would normally be fine, except for **this exact specific case**, where a timer is run manually _inside_ of the script. 
+In testing this, I actually found a **new** (or, at least, unfixed) bug in H2V/MCC reguarding scripts; while the engine is set up to run at 60hz, and the 'sleep' commands are fixed to compensate from 30hz, the scripts _themselves_ run at 60hz. This would normally be fine, except for **this exact specific case**, where a timer is run manually _inside_ of the script. So anything that uses a manually subtracted *'timer_'* variable, now has incorrect timing H2V/MCC. 
 
 I'm assuming this bug was present in PAL versions of H2C also, but can't confirm.
 
