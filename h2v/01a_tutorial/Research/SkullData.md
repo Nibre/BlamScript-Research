@@ -2,7 +2,8 @@
 ## Scripts
 ### icecream
 ```lisp
-; Lines 859-877 from 01a_tutorial_mission
+; Lines from 01a_tutorial_mission
+; Continually called from startup, to spawn Skull when okay'd to
 (script startup icecream
 	(sleep_until
 		(and 
@@ -23,9 +24,101 @@
 	(print "Blam")
 )
 ```
+### mission_01a
+```lisp
+; Lines from 01a_tutorial_mission
+; Called on startup
+(script startup mission_01a
+	(player_disable_movement true)
+	(player_camera_control false)
+	(if
+		(game_is_cooperative)
+		(game_won)
+	)
+	(objectives_clear)
+	(ai_allegiance player human)
+	(fade_out 1 1 1 0)
+	(hud_enable_training false)
+	(ai_dialogue_enable false)
+	(start_mission)
+	(training_setup)
+	(camera_control false)
+	(sleep 1)
+	(cache_block_for_one_frame)
+	(objects_predict_high (ai_get_object guns))
+	(sleep 2)
+	(cinematic_fade_from_white_bars)
+	(wake training_fade)
+	(training_look)
+	(hud_enable_training true)
+	(training_move)
+	(training_shield)
+	(save_tram_start)
+	(training_done) ; <----- Calls training_done ---------------------------
+	(training_tram)
+	(print "You win!")
+	(sound_class_set_gain "" 0 15)
+	(cinematic_fade_to_white)
+	(hud_enable_training true)
+	(ai_dialogue_enable true)
+	(game_won)
+)
+```
+### training_done
+```lisp
+; Lines from 01a_tutorial_mission
+; Called from mission_01a
+(script static void training_done
+	(device_set_position_immediate tram 0)
+	(cs_run_command_script johnson cs_lookat_guns)
+	
+	(print "Don't worry, I'll hold his hand.")
+	(sound_impulse_start sound\dialog\levels\01_spacestation\mission\l01_1040_jon (ai_get_object johnson) 1)
+	(sleep (- (sound_impulse_language_time sound\dialog\levels\01_spacestation\mission\l01_1040_jon) 30))
+	
+	(cs_run_command_script johnson cs_johnson_elevator)
+	(sleep 15)
+	
+	(cs_run_command_script guns cs_guns_elevator)
+	(sleep 15)
+	
+	(sleep_until
+		(volume_test_objects_all tv_elevator_tram_bot (ai_get_object johnson))
+		1
+		(* 30 seconds)
+	)
+	
+	(if
+		(not (volume_test_objects_all tv_elevator_tram_bot (ai_get_object johnson)))
+		(object_teleport (ai_get_object johnson) tram_flag)
+	)
+	
+	(sleep_until
+		(if
+			(volume_test_objects_all tv_elevator_tram_bot (players))
+			(begin true)
+			(cond
+				(
+					(> timer_prompt_elevator_plr 0)
+					(begin
+						(set timer_prompt_elevator_plr (- timer_prompt_elevator_plr 1))
+						false
+					)
+				)
+				(
+					true
+					(prompt_elevator_plr) ; <----- Calls prompt_elevator_plr --------------------------------
+				)
+			)
+		)
+		1
+	)
+	;//...// Irrelevant code
+)
+```
 ### prompt_elevator_plr
 ```lisp
-; Lines 767-847 from 01a_tutorial_mission
+; Lines from 01a_tutorial_mission
 ; Called from training_done
 (script static void prompt_elevator_plr
 	(hud_show_training_text false)
@@ -98,7 +191,7 @@
 				(set timer_prompt_elevator_plr (sound_impulse_language_time sound\dialog\levels\01_spacestation\mission\l01_1690_jon))
 				(set timer_prompt_elevator_plr (+ timer_prompt_elevator_plr delay_prompt_long))
 				(set timer_prompt_elevator_plr (+ timer_prompt_elevator_plr delay_prompt_drag))
-				(set mark_ice_cream true)
+				(set mark_ice_cream true) ; <----- Marks Skull as okay to spawn -------------------------------------
 			)
 		)
 		(
