@@ -13,6 +13,7 @@ For the Megg Easter Egg to be able to play, you must;
  * Thunderstorm Skull is on
  * That starting from when Johnson says "Let 'em have it." (when deploying the turret at the beginning) all the way until you are at the top of the bomb room elevator, you have **100%** Shields _the entire time_
    * Luckily you _are_ able to revert back to a checkpoint where you were never-damaged, and have it still work
+
 ## Break Down
 Here is a simplified version of how it happens;
 ```
