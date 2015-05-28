@@ -23,7 +23,7 @@ Starts checking for Megg;
 		if player is at the top of the bomb room elevator
 			Marks Megg as available to be played
 ```		
-Once you've reached the bottom of the Bomb room **Elevator** having never lost any Shield, when the loud-speaker cycles through next and notices Megg is available, it will play it. This usually takes 10-35 seconds _*[12.5-20 seconds [non-H2C](../../Bugs/ScriptIterationTiming.md)]_ from when "Return to Sender" text starts fading onto the screen. Though it can be hard to hear, it will say;
+Once you've reached the bottom of the Bomb room **Elevator** having never lost any Shield, the  next time the loud-speaker cycles through and notices Megg is now available, it will play it. This usually takes 10-35 seconds _*[12.5-20 seconds [non-H2C](../../Bugs/ScriptIterationTiming.md)]_ from when "Return to Sender" text starts fading onto the screen. Though it can be hard to hear, it will say;
     
 `"Paging Meg.  Please come to the red courtesy phone.  Meg to the red courtesy phone, please."`
 
