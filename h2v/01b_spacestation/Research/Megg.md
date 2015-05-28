@@ -57,6 +57,6 @@ Cortana (With a 45-60 second *[22.5-30 seconds non-H2C] wait after)
 If something **other** than these things starts playing, it's possible that you got through an earlier section too quickly (or didn't kill enough enemies), and it has a backlog of dialogue to go through first. Just wait for them to cycle all the way through (how many there can be varies, you can find them all in the [Mission Script](../01b_spacestation_mission.lisp)). Remember, you've **only** failed if _more than one_ of the above dialogue play.
 ## Name
 The Easter Egg is named after Jaime Griesemer's (Bungie Employee) girlfriend, Meg. Jaime worked on the scripting (from what I can tell) of this level, The Armory, and the Tartarus Boss fight. He put a similar Egg in Halo CE. 
-### Spelling
+#### Spelling
 It seems like her name is actually spelled with just one 'g', (from the script dialogue transcription), and that Megg (with two 'g's) came from the amalgamation of 'Meg' and 'Easter Egg'.
 
