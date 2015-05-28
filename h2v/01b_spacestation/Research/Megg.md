@@ -34,7 +34,7 @@ Elevator Trigger Volume placeholder
 
 ### Troubleshooting
 
-The loud-speaker will say _more than one_ of these if you **failed** to trigger Megg;
+In the Bomb room, the loud-speaker will say _more than one_ of these if you **failed** to trigger Megg;
 ```
 Lord Hood (With a 15-30 second *[7.5-15 seconds non-H2C] wait after)
 	"All non-combat personnel to pressure-zones!"
