@@ -34,6 +34,7 @@ For any script that uses an (uncorrected) **iteration timer**;
    * Every pause _between_ dialogue variation for both Guns and Johnson. Easy to notice while waiting for the Skull to spawn.
  * **Cairo Station**
    * Every pause _between_ dialogue that happens over the loud-speaker (and Cortana if you're hiding in the Bomb room) 
+
 ### Corrected
  * **The Great Journey**
    * The timings of 1) Tartarus shield recharge 2) Johnson's Beam Rifle rate of fire 3) Rate of Brute reinforcements (that all change with difficulty) during the final Boss fight.
