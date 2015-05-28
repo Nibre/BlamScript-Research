@@ -11,4 +11,7 @@ My goal is to have definitively researched information on the various scripting 
    * [Broken Dialogue](h2v/01a_tutorial/Research/BrokenDialogue.md)
  * **Cairo Station**
    * [Megg Easter Egg](h2v/01b_spacestation/Research/Megg.md)
-   * [**Additional Info**](h2v/Additional/README.md)
+ * **Other** 
+   * Bug Research
+     * [Script Iteration Timing](h2v/Bugs/ScriptIterationTiming.md)
+   * [Additional Info](h2v/Additional/README.md)
