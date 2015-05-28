@@ -27,7 +27,7 @@ While player is not inside of the Elevator volume
     Adds 72 seconds to the timer [36 for non-H2C]
     --
     Johnson finishes saying "Would it help if I said please?"    
-    {Adds 86 seconds to the timer, but there's no need to wait any more?} [43 for non-H2C]
+    {Adds 86 seconds to the timer, but there's no need to wait any more? [43 for non-H2C]}
     Marks Skull as okay to spawn
     	Checks that it is Legendary first
         Spawns Weapon 'cookiesncream' [The Skull]
@@ -39,15 +39,15 @@ In total, with about 7 seconds of dialog and 264 seconds of scripted waiting, it
 
 #### Found New Bug
 
-In testing this, I actually found a **new** (or, at least, unfixed) bug in H2V/MCC reguarding scripts; while the engine is set up to run at 60hz, and the 'sleep' commands are fixed to compensate from 30hz, the scripts _themselves_ run at 60hz. This would normally be fine, except for **this exact specific case**, where a timer is run manually _inside_ of the script. So anything that uses a manually subtracted *'timer_'* variable, now has incorrect timing H2V/MCC. 
+In testing this, I actually found a **new** (or, at least, unfixed) bug in H2V/MCC reguarding scripts; while the engine is set up to run at 60hz, and all of the 'sleep' commands are fixed to compensate from 30hz, the scripts _themselves_ run at 60hz. This would normally be fine, except for **this exact specific case**, where a timer is run manually _inside_ of the script. So anything that uses a manually subtracted *'timer_'* variable, now has incorrect timing H2V/MCC. 
 
 I'm assuming this bug was present in PAL versions of H2C also, but can't confirm.
 
 So, for H2V/MCC, 1 manually-timed-script-second = 1/2 second, and for H2C PAL (assuming), 1 manually-timed-script-second = 5/6 second. 
 
-Funnily enough, while looking for other script-based timers, I've only found one other, and it was **ALREADY FIXED** in the H2V source scripts. 
+Funnily enough, while looking for other script-based timers, I've only found another that was **ALREADY FIXED** in the H2V source scripts. 
 
-The other occurrence looked like it would be on the Tartarus Boss fight, but it had the unusual variables _'game_seconds' = 30_ and _'script_seconds' = 60_, where in H2C (because, I _had_ to go check), it only had _'seconds' = 30_. So this must mean that they (Hired Gun, porters of H2V) went through and figured out this bug on the Tartarus fight, and they fixed it by using a new 'script_seconds' where it was applicable. H2C PAL more than likely doesn't have the fix for that Boss fight.
+The other occurrence looked like it would be on the Tartarus Boss fight, but it had the unusual variables _'game_seconds' = 30_ and _'script_seconds' = 60_, where in H2C (because, I _had_ to go check), it only had _'seconds' = 30_. So this must mean that they (Hired Gun, porters of H2V) went through and figured out this problem on the Tartarus fight, and they fixed it by using a new 'script_seconds' where it was applicable. H2C PAL more than likely doesn't have the fix for that Boss fight.
 
 ## Skull Effect
 
