@@ -1,7 +1,7 @@
 # Broken Dialogue
 ## Level Data
 Relevant Level Data [Here](BrokenDialogueData.md)
-## Break Down
+## The Problem
 When Guns is asking you to get into the _'Zapper'_, he goes through a couple lines of dialogue repeatedly until you do actually enter it. Here is some psuedo-code showing how the dialogue runs;
 ```
 Condition // Stops at first true condition, and only runs that one
