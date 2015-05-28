@@ -8,46 +8,37 @@ The Skull spawns when the following events occur;
 Johnson finishes saying "Don't worry, I'll hold his hand."
 Johnson has walked into the volume inside of the Elevator
 While player is not inside of the Elevator volume
-	Adds 8 seconds to the timer [4 for non-H2C] 
+	Adds 8 seconds to the timer *[4 for non-H2C]
 	Starts counting down timer (to continue to the next step)
     --
 	Johnson finishes saying "C'mon, Chief, they're ready for us on the bridge."    
-    Adds 8 seconds to the timer [4 for non-H2C]
+    Adds 8 seconds to the timer *[4 for non-H2C]
     --
     Johnson finishes saying "Get on the lift, Cheif, we're gonna be late."    
-    Adds 52 seconds to the timer [26 for non-H2C]
+    Adds 52 seconds to the timer *[26 for non-H2C]
     --
     Johnson finishes saying "I don't want to keep the Brass waiting, Chief."    
-    Adds 52 seconds to the timer [26 for non-H2C]
+    Adds 52 seconds to the timer *[26 for non-H2C]
     --
     Johnson finishes saying "Fine. you can tell Lord Hood why we're late!"    
-    Adds 72 seconds to the timer [36 for non-H2C]
+    Adds 72 seconds to the timer *[36 for non-H2C]
     --
     Johnson finishes saying "Get your shiny green posterior on this elevator!"    
-    Adds 72 seconds to the timer [36 for non-H2C]
+    Adds 72 seconds to the timer *[36 for non-H2C]
     --
     Johnson finishes saying "Would it help if I said please?"    
-    {Adds 86 seconds to the timer, but there's no need to wait any more? [43 for non-H2C]}
+    {Adds 86 seconds to the timer, but there's no need to wait any more? *[43 for non-H2C]}
     Marks Skull as okay to spawn
     	Checks that it is Legendary first
         Spawns Weapon 'cookiesncream' [The Skull]
         Waits until Player has a Skull Weapon
         Activates Skull
 ```
-In total, with about 7 seconds of dialog and 264 seconds of scripted waiting, it takes about 271 seconds, or 4 minutes, 31 seconds [Or, it's _supposed to_, see below. For H2V/MCC, it's instead about 139 seconds, or 2 minutes 19 seconds] from the second Johnson crosses the threshold into the Elevator, to when the Skull is spawned.
-
-
-#### Found New Bug
-
-In testing this, I actually found a **new** (or, at least, unfixed) bug in H2V/MCC reguarding scripts; while the engine is set up to run at 60hz, and all of the 'sleep' commands are fixed to compensate from 30hz, the scripts _themselves_ run at 60hz. This would normally be fine, except for **this exact specific case**, where a timer is run manually _inside_ of the script. So anything that uses a manually subtracted *'timer_'* variable, now has incorrect timing H2V/MCC. 
-
-I'm assuming this bug was present in PAL versions of H2C also, but can't confirm.
-
-So, for H2V/MCC, 1 manually-timed-script-second = 1/2 second, and for H2C PAL (assuming), 1 manually-timed-script-second = 5/6 second. 
-
-Funnily enough, while looking for other script-based timers, I've only found another that was **ALREADY FIXED** in the H2V source scripts. 
-
-The other occurrence looked like it would be on the Tartarus Boss fight, but it had the unusual variables _'game_seconds' = 30_ and _'script_seconds' = 60_, where in H2C (because, I _had_ to go check), it only had _'seconds' = 30_. So this must mean that they (Hired Gun, porters of H2V) went through and figured out this problem on the Tartarus fight, and they fixed it by using a new 'script_seconds' where it was applicable. H2C PAL more than likely doesn't have the fix for that Boss fight.
+In total, with about 7 seconds of dialog and 264 seconds of scripted waiting, it takes about 271 seconds, or 4 minutes, 31 seconds _*[For non-H2C it's about 139 seconds, or 2 minutes 19 seconds. You can find out why [here](../../Bugs/ScriptIterationTiming.md).]_ from the second Johnson crosses the threshold into the **Elevator**, to when the **Skull** is spawned.
+#### Elevator Trigger (tv_elevator_tram_bot)
+Placeholder for Elevator picture
+#### Skull (cookiesncream)
+Placeholder for Skull picture
 
 ## Skull Effect
 
@@ -56,7 +47,7 @@ The other occurrence looked like it would be on the Tartarus Boss fight, but it 
 The best description I've ever found of what the Skull does is from Kornman00 (Halo Engine Reverse-Engineering Jesus) [**here**](http://forums.bungie.org/halo/archive35.pl?read=1049288), where he explains that it just sets all of the game engine sounds 'volume' to be **Loud**, so that even the quietest noise you generate, to the AI, is heard as loudly as an exploding grenade. _This_ is why they notice you more quickly.
 
 ## Skull Name
-Now, ever since this Skull was found, there has been confusion with what its name actually is, as it doesn't flash text when you pick it up like the other Skulls do. Luckily in MCC, 343 have finally put a name on it, _'That's Just...Wrong'_, to put that confusion to rest. I am not convinced though, after looking at the evidence, that Bungie had **actually** intended its name to be _'That's Just...Wrong'_. That is why I've been referring to is as just _'Skull'_.
+Now, ever since this Skull was found, there has been confusion with what its name actually is, as in H2C it doesn't flash text when you pick it up like the other Skulls do. Luckily in MCC, 343 have finally put a name on it, _'That's Just...Wrong'_, to put that confusion to rest. I am not convinced though, after looking at the evidence, that Bungie had **actually** intended its name to be _'That's Just...Wrong'_. That is why I've been referring to is as just _'Skull'_.
 
 
 
