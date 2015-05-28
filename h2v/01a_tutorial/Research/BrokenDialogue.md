@@ -43,7 +43,7 @@ Condition // Stops at first true condition, and only runs that one
 		
 Zapper_Prompts = Zapper_Prompts + 1 // Increments it for next loop
 ```
-If you read through that, you might notice the problem; 3 of the lines of dialogue are checking the same condition, *'Zapper_Prompts = 5'*. This creates a problem though, as only the first one hit can actually play, and then the next time around, Zapper_Prompts is 6, so it hits the last condition sets it back to 2 (which is bumped it up to 3).
+If you read through that, you might notice the problem; 3 of the lines of dialogue are checking the same condition, *'Zapper_Prompts = 5'*. So the issue that creates is that only the first one hit can actually play, and then the next time around, Zapper_Prompts is 6, so it hits the last condition sets it back to 2 (which is bumped it up to 3).
 
 I'm assuming this was just a simple typo, because they should check for [5, 6, 7] instead of [5, 5, 5]. The 2 lines of dialogue that get skipped because of this, are;
 
