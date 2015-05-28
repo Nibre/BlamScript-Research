@@ -250,7 +250,7 @@ From [01b_spacestation_mission](../01b_spacestation_mission.lisp)
 					FALSE
 				)
 			)
-			( ; <----- Can possibly get into this before Megg has a chance -------------------------------------
+			(
 				(and
 					mark_flavor_bomb
 					(game_safe_to_save)
@@ -303,11 +303,11 @@ From [01b_spacestation_mission](../01b_spacestation_mission.lisp)
 						)
 					)
 					(set counter_flavor_bomb_safe (+ counter_flavor_bomb_safe 1))
-					(set timer_flavor (timer_flavor_set_long)) ; <----- 45-60 seconds [22.5-30 for non-H2C] delay after --------------------------------
+					(set timer_flavor (timer_flavor_set_long)) ; <----- 45-60 seconds *[22.5-30 for non-H2C] delay after --------------------------------
 					FALSE
 				)
 			)
-			( ; <----- Can possibly get into this before Megg can has a chance -------------------------------------
+			(
 				mark_flavor_bomb
 				(begin
 					(cond
@@ -341,7 +341,7 @@ From [01b_spacestation_mission](../01b_spacestation_mission.lisp)
 						)
 					)
 					(set counter_flavor_bomb (+ counter_flavor_bomb 1))
-					(set timer_flavor (timer_flavor_set)) ; <----- 15-30 seconds [7.5-15 for non-H2C] delay after --------------------------------
+					(set timer_flavor (timer_flavor_set)) ; <----- 15-30 seconds *[7.5-15 for non-H2C] delay after --------------------------------
 					(set mark_flavor_safe_cycle FALSE)
 					FALSE
 				)
