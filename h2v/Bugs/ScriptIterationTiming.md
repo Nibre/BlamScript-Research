@@ -31,7 +31,7 @@ For any script that uses an (uncorrected) **iteration timer**;
 ## Occurances
 ### Uncorrected
  * **The Armory**
-   * Every pause _between_ dialogue variation for both Guns and Johnson. Easy to notice while waiting for the Skull to spawn.
+   * Every pause _between_ dialogue variation (them waiting for you) for both Guns and Johnson. Easy to notice while waiting for the Skull to spawn.
  * **Cairo Station**
    * Every pause _between_ dialogue that happens over the loud-speaker (and Cortana if you're hiding in the Bomb room) 
 
