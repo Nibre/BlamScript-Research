@@ -19,7 +19,7 @@ For scripting, everything works fine at 60Hz if you are using the pre-fixed, tim
 
 It appears that there are several times throughout H2 where this type of timer was used, and for H2V they slipped through the cracks, never getting corrected. Funnily enough, while I was looking for other iteration timers, I found one that was **ALREADY FIXED** in the H2V source scripts. This means that Hired Gun _did_ find this type of bug, but they didn't find and correct all of them. 
 
-I found the fixed iteration timer on the Tartarus Boss fight. It has the variables _'script_seconds = 60'_ and _'game_seconds = 30'_. In H2C (because, I _had_ to go check), it looks like only one _'seconds = 30'_ variable was used. So this must mean that Hired Gun went through and fixed this timer by using the  _'script_seconds = 60'_ variable where 30Hz was previously assumed, and _'game_seconds = 30'_ where it was already accounted for.
+I found the fixed iteration timer on the Tartarus Boss fight, where there are the variables _'script_seconds = 60'_ and _'game_seconds = 30'_. In H2C (because, I _had_ to go check), it looks like only one _'seconds = 30'_ variable was used. So this must mean that Hired Gun went through and fixed the timers by using the  _'script_seconds = 60'_ variable where 30Hz was previously assumed, and _'game_seconds = 30'_ where 60Hz was already accounted for.
 
 ### Consequence
 
@@ -37,4 +37,4 @@ For any script that uses an (uncorrected) **iteration timer**;
 
 ### Corrected
  * **The Great Journey**
-   * The timings of 1) Tartarus shield recharge 2) Johnson's Beam Rifle rate of fire 3) Rate of Brute reinforcements (that all change with difficulty) during the final Boss fight.
+   * The timings of 1) Tartarus shield recharge 2) Johnson's Beam Rifle rate of fire 3) Rate of Brute reinforcements (all of which change with difficulty) during the final Boss fight.
